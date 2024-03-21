@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Home - CinemaDB{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div>
+        <h2 class="text-xl font-semibold mb-4">Enter a Movie Title</h2>
+        <form action="/recommend" method="POST">
+            <input type="text" name="movie_title" placeholder="Enter a movie title" class="border rounded px-4 py-2 mb-2 w-full">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Get Recommendations</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

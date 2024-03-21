@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Movie Recommendations{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">Recommendations for {{ movie_title }}</h1>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  {% for movie in recommended_movies %}
+  <div class="bg-white rounded-lg shadow-md overflow-hidden">
+    <img class="w-full h-48 object-cover" src="{{ movie.image }}" alt="{{ movie.title }}">
+    <div class="p-4">
+      <h3 class="text-lg font-medium mb-2">{{ movie.title }}</h3>
+      <p class="text-gray-600 mb-2">{{ movie.overview }}</p>
+      <span class="text-sm text-gray-400">Genre: {{ movie.genre }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
