@@ -113,4 +113,5 @@ def recommend():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Use 0.0.0.0 as the host to listen on all available network interfaces
+    app.run(host="0.0.0.0", port=5000, debug=True)
