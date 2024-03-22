@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python",
+        "config": { "use-pep517": true },
+        "runtime": "python3.11" 
+      }
+    ],
+    "routes": [
+      { "src": "dataset/(.*)", "dest": "/dataset/$1" },
+      { "src": "templates/(.*)", "dest": "/templates/$1" },
+      { "src": "/(.*)", "dest": "/app.py" }
+    ]
+  }
+  
